@@ -44,6 +44,17 @@ export class UserService {
     return this._http.post(this.url+'login', params, {headers: headers});
   }
 
+  update(token:any, user:User): Observable<any>{
+    let json = JSON.stringify(user);
+    let params = "json="+json;
+
+    let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
+                                   .set('Authorization', token);
+
+    return this._http.put(this.url + 'user/update', params, {headers: headers});
+
+  }
+
   //Metodos para sacar los datos almacenados en el localstorage del navegador web
 
   getIdentity(){
