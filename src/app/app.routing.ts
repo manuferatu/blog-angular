@@ -13,9 +13,10 @@ const appRoutes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'inicio', component: HomeComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'logout/:sure', component: LoginComponent},
   {path: 'registro', component: RegisterComponent},
 
-  {path: '**', component: ErrorComponent},
+  {path: '**', component: ErrorComponent},//Importante poner esta ruta al final de las otras
 
 ];
 
