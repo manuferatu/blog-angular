@@ -6,8 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./post-new.component.css']
 })
 export class PostNewComponent implements OnInit {
-
-  constructor() { }
+  public page_title: string;
+  constructor() {
+    this.page_title = 'Crear una entrada';
+  }
 
   ngOnInit(): void {
   }
