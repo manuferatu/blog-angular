@@ -43,6 +43,17 @@
       <label for="description">Biografía</label>
       <input type="text" name="description" class="form-control" #description="ngModel" [(ngModel)]="user.description">
     </div>
+    <div *ngIf="identity && identity.image" >
+      <img src="{{url + 'user/avatar/' + user.image}}" class="avatar_edit">
+    </div>
+    <div class="form-group">
+      <label for="image">Imagen</label>
+      <angular-file-uploader
+        [config]="afuConfig"
+        [resetUpload]=resetVar
+        (ApiResponse)="avatarUpload($event)">
+      </angular-file-uploader>
+    </div>
     <input type="submit" value="Guardar" class="btn btn-success" [disabled]="userEditForm.invalid">
   </form>
 </div>

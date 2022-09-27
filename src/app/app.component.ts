@@ -44,7 +44,7 @@ export class AppComponent implements OnInit, DoCheck{
     this._categoryService.getCategories().subscribe(
       response =>{
         this.categories = response.categories;
-        console.log(this.categories);
+        //console.log(this.categories);
 
       },
       error =>{

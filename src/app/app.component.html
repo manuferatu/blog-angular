@@ -22,16 +22,22 @@
       </ul>
 
       <ng-template #isLoggedOut>
-      <ul class="navbar-nav navbar-right">
-        <li class="nav-item active">
-          <a class="nav-link" [routerLink]="['/login']">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/registro']">Registro</a>
-        </li>
-      </ul>
-    </ng-template>
-      <ul class="navbar-nav navbar-right" *ngIf="identity && identity.name else isLoggedOut" >
+        <ul class="navbar-nav navbar-right">
+          <li class="nav-item active">
+            <a class="nav-link" [routerLink]="['/login']">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/registro']">Registro</a>
+          </li>
+        </ul>
+      </ng-template>
+      <ul class="navbar-nav navbar-right" *ngIf="identity && identity.name else isLoggedOut">
+        <div class="avatar_mask">
+          <li *ngIf="identity && identity.image">
+            <img src="{{url + 'user/avatar/' + identity.image}}" class="avatar_nav">
+          </li>
+        </div>
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">

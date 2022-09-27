@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { routing, appRoutingProviders } from './app.routing';
+import { AngularFileUploaderModule } from "angular-file-uploader";
 
 
 import { AppComponent } from './app.component';
@@ -27,13 +28,15 @@ import { PostNewComponent } from './components/post-new/post-new.component';
     CategoryNewComponent,
     PostNewComponent,
 
+
   ],
   //Cargamos los modulos
   imports: [
     BrowserModule,
     routing,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFileUploaderModule
   ],
   //Cargamos los servicios
   providers: [
