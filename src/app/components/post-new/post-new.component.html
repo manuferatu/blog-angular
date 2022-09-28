@@ -5,7 +5,12 @@
   </p>
   <hr />
   <!--Alert messages-->
-
+  <div class="alert alert-success col-md-6 mt-3" *ngIf="status == 'success'">
+    Modificaciones realizadas correctamente!
+  </div>
+  <div class="alert alert-danger col-md-6 mt-3" *ngIf="status == 'error'">
+    Fallo al realizar las modificaciones, intentalo de nuevo.
+  </div>
   <!--Create post form-->
   <form class="col-md-5 ml-0 pl-0" #postNewForm="ngForm" (ngSubmit)="onSubmit(postNewForm)">
     <div class="form-group">
@@ -32,10 +37,7 @@
 
     <div class="form-group">
       <label for="image">Imagen</label>
-      <angular-file-uploader
-        [config]="afuConfig"
-        [resetUpload]=resetVar
-        (ApiResponse)="imageUpload($event)">
+      <angular-file-uploader [config]="afuConfig" [resetUpload]=resetVar (ApiResponse)="imageUpload($event)">
       </angular-file-uploader>
     </div>
 

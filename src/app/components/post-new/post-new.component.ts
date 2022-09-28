@@ -5,6 +5,7 @@ import { CategoryService } from 'src/app/services/category.service';
 import { Post } from 'src/app/models/post';
 import { PostService } from 'src/app/services/post.service';
 import { global } from 'src/app/services/global';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-post-new',
@@ -89,7 +90,22 @@ export class PostNewComponent implements OnInit {
   }
 
   onSubmit(form: any) {
-    console.log(this.post);
+    //console.log(this.post);
+    this._postService.create(this.token,this.post).subscribe(
+      response => {
+        if(response.status == 'success'){
+          this.post = response.post;
+          this.status = 'success';
+          this._router.navigate(['inicio']);
+        }else{
+          this.status = 'error';
+        }
+      },
+      error => {
+        console.log(<any>error);
+
+      }
+    );
 
   }
 
