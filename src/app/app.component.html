@@ -31,7 +31,7 @@
           </li>
         </ul>
       </ng-template>
-      <ul class="navbar-nav navbar-right" *ngIf="identity && identity.name else isLoggedOut">
+      <ul class="navbar-nav navbar-right" *ngIf="identity && identity.name; else isLoggedOut">
         <div class="avatar_mask">
           <li *ngIf="identity && identity.image">
             <img src="{{url + 'user/avatar/' + identity.image}}" class="avatar_nav">

@@ -33,5 +33,11 @@ export class PostService{
     return this._http.get(this.url + 'post', {headers:headers});
   }
 
+  getPost(id:any):Observable<any>{
+    let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
+    return this._http.get(this.url + 'post/' +id, {headers:headers});
+
+  }
+
 
 }
