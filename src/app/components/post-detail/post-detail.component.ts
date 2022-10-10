@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router, ActivatedRoute, Params } from '@angular/router';
 import { Post } from 'src/app/models/post';
+import { global } from 'src/app/services/global';
 import { PostService } from 'src/app/services/post.service';
 //import { UserService } from 'src/app/services/user.service';
 
@@ -11,14 +12,16 @@ import { PostService } from 'src/app/services/post.service';
   providers: [PostService]
 })
 export class PostDetailComponent implements OnInit {
-    public post: Post;
+    public post: any;
+    public url: any;
   constructor(
     //private _userService: UserService
     private _postService: PostService,
     private _route: ActivatedRoute,
     private _router: Router
   ) {
-    this.post = new Post(1,1, 1, '', '', '', null);
+    //this.post = new Post(1,1, 1, '', '', '', null);
+    this.url = global.url;
   }
 
   ngOnInit(): void {

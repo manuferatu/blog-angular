@@ -20,7 +20,7 @@
           <img src="assets/images/default.png" class="w-100" />
         </div>
         <div class="post-buttons mt-3">
-          <span *ngIf="identity && identity.sub == post.user_id; then loged else noLoged"></span>
+          <span *ngIf="identity && identity.id == post.user_id; then loged else noLoged"></span>
           <ng-template #noLoged>
             <a [routerLink]="['/inicio']" class="btn btn-success mr-2">Leer</a>
           </ng-template>
