@@ -22,6 +22,7 @@ export class PostNewComponent implements OnInit {
   public image: any;
   public status: string;
   public resetVar: boolean;
+  public is_edit: boolean;
 
   afuConfig = <any>{
     multiple: false,
@@ -60,6 +61,7 @@ export class PostNewComponent implements OnInit {
     this.post = new Post(1, this.identity.sub, 1, '', '', '', null);
     this.status = '';
     this.resetVar = true;
+    this.is_edit = false;
   }
 
   ngOnInit(): void {
