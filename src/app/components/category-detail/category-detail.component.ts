@@ -30,13 +30,14 @@ export class CategoryDetailComponent implements OnInit {
   ) {
     this.url = global.url;
     this.page_title = "Detalle de la Categoría";
-    this.identity = _userService.getIdentity;
-    this.token = _userService.getTocken;
+    this.identity = _userService.getIdentity();
+    this.token = _userService.getTocken();
 
   }
 
   ngOnInit(): void {
     this.getPostsByCategory();
+    this.getPosts();
   }
 
   getPostsByCategory() {
@@ -95,7 +96,8 @@ export class CategoryDetailComponent implements OnInit {
   deletePost(id: any) {
     this._postService.delete(this.token, id).subscribe(
       response => {
-        this.getPosts();
+        //we call this method to stay in the list of categories
+        this.getPostsByCategory();
       },
       error => {
         console.log(error);
