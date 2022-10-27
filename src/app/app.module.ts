@@ -16,8 +16,11 @@ import { CategoryNewComponent } from './components/category-new/category-new.com
 import { PostNewComponent } from './components/post-new/post-new.component';
 import { PostDetailComponent } from './components/post-detail/post-detail.component';
 import { PostEditComponent } from './components/post-edit/post-edit.component';
+import { CategoryDetailComponent } from './components/category-detail/category-detail.component';
+//import { CategoryDetailComponent } from './components/category-detail/category-detail.component';
 
-
+import { IdentityGuard } from "./services/identity.guard";
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,8 @@ import { PostEditComponent } from './components/post-edit/post-edit.component';
     PostNewComponent,
     PostDetailComponent,
     PostEditComponent,
+    CategoryDetailComponent,
+    //CategoryDetailComponent,
 
 
   ],
@@ -44,7 +49,9 @@ import { PostEditComponent } from './components/post-edit/post-edit.component';
   ],
   //Cargamos los servicios
   providers: [
-    appRoutingProviders
+    appRoutingProviders,
+    IdentityGuard,
+    UserService
   ],
   bootstrap: [AppComponent]
 })
