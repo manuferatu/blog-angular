@@ -22,6 +22,7 @@ export class PostEditComponent implements OnInit {
   public status: string;
   public resetVar: boolean;
   public is_edit: boolean;
+  public url: any;
 
   afuConfig = <any>{
     multiple: false,
@@ -61,6 +62,7 @@ export class PostEditComponent implements OnInit {
     this.status = '';
     this.resetVar = true;
     this.is_edit = true;
+    this.url = global.url;
 
   }
 

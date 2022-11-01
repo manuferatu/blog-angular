@@ -7,6 +7,7 @@ import { PostService } from 'src/app/services/post.service';
 import { global } from 'src/app/services/global';
 import { Observable } from 'rxjs';
 
+
 @Component({
   selector: 'app-post-new',
   templateUrl: './post-new.component.html',
@@ -23,6 +24,7 @@ export class PostNewComponent implements OnInit {
   public status: string;
   public resetVar: boolean;
   public is_edit: boolean;
+  public url: any;
 
   afuConfig = <any>{
     multiple: false,
@@ -62,6 +64,7 @@ export class PostNewComponent implements OnInit {
     this.status = '';
     this.resetVar = true;
     this.is_edit = false;
+    this.url = global.url;
   }
 
   ngOnInit(): void {
