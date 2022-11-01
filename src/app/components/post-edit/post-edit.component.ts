@@ -104,6 +104,10 @@ export class PostEditComponent implements OnInit {
             this.post = response.post;
             //console.log(this.post);
 
+            if(this.post.user_id != this.identity.sub){
+              this._router.navigate(['/inicio'])
+            }
+
           } else {
             this._router.navigate(['/inicio']);
           }
@@ -123,6 +127,7 @@ export class PostEditComponent implements OnInit {
         if (response.status == 'success') {
           this.status = 'success';
           //this.post = response.post;
+
 
           //Redigir a la paginadel post
           this._router.navigate(['/entrada', this.post.id]);

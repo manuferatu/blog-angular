@@ -24,7 +24,7 @@ const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'logout/:sure', component: LoginComponent},
   {path: 'registro', component: RegisterComponent},
-  {path: 'ajustes', component: UserEditComponent, canActivate: [IdentityGuard]},
+  {path: 'ajustes', component: UserEditComponent, canActivate: [IdentityGuard]},//we put the guard where if you are not logged in you won´t be able to see that route
   {path: 'crear-categoria', component: CategoryNewComponent, canActivate: [IdentityGuard]},
   {path: 'crear-entrada', component: PostNewComponent, canActivate: [IdentityGuard]},
   {path: 'entrada/:id', component: PostDetailComponent},
