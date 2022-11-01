@@ -18,6 +18,7 @@ export class PostService {
   }
 
   create(token: any, post: any): Observable<any> {
+    post.content = global.htmlEntities(post.content);// clear field content htmlentities -> utf8
     let json = JSON.stringify(post) //We convert the javescript Json object into a string to send  it through the http protocol
     let params = "json=" + json;
 
@@ -40,6 +41,7 @@ export class PostService {
   }
 
   update(token: any, post: any, id: any): Observable<any> {
+    post.content = global.htmlEntities(post.content);// clear field content htmlentities -> utf8
     let json = JSON.stringify(post);
     let params = "json=" + json;
 
