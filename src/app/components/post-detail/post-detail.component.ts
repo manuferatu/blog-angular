@@ -3,25 +3,27 @@ import {Router, ActivatedRoute, Params } from '@angular/router';
 import { Post } from 'src/app/models/post';
 import { global } from 'src/app/services/global';
 import { PostService } from 'src/app/services/post.service';
-//import { UserService } from 'src/app/services/user.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-post-detail',
   templateUrl: './post-detail.component.html',
   styleUrls: ['./post-detail.component.css'],
-  providers: [PostService]
+  providers: [PostService, UserService]
 })
 export class PostDetailComponent implements OnInit {
     public post: any;
     public url: any;
+    public identity: any;
   constructor(
-    //private _userService: UserService
+    private _userService: UserService,
     private _postService: PostService,
     private _route: ActivatedRoute,
     private _router: Router
   ) {
     //this.post = new Post(1,1, 1, '', '', '', null);
     this.url = global.url;
+    this.identity = _userService.getIdentity();
   }
 
   ngOnInit(): void {
