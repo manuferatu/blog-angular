@@ -22,7 +22,7 @@
         <div class="post-buttons mt-3">
           <span *ngIf="identity && identity.sub == post.user_id; then loged else noLoged"></span>
           <ng-template #noLoged>
-            <a [routerLink]="['/inicio']" class="btn btn-success mr-2">Leer</a>
+            <a [routerLink]="['/entrada', post.id]" class="btn btn-success mr-2">Leer</a>
           </ng-template>
           <ng-template #loged>
             <a [routerLink]="['/entrada', post.id]" class="btn btn-success mr-2">Leer</a>

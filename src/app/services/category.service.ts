@@ -41,7 +41,7 @@ export class CategoryService{
 
   getPostsByCategory(id:any){
     let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
-    return this._http.get(this.url+'post/category/'+id, {headers: headers});
+    return this._http.get(this.url + 'post/category/'+id, {headers: headers});
   }
 
 }
