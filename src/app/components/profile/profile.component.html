@@ -3,8 +3,16 @@
 </div>
 <div class="container-flud mt-3" *ngIf="posts">
   <hr>
-
-  <h1>Perfil de {{ user.name + ' ' + user.surname }}</h1>
+  <div id="user-card">
+    <div class="avatar_mask_profile float-left mr-3" *ngIf="identity && identity.image">
+      <img src="{{url + 'user/avatar/' + identity.image}}" class="avatar_nav">
+    </div>
+  </div>
+  <div class="data_mask float-left">
+    <h1>{{ user.name + ' ' + user.surname }}</h1>
+    <p [innerHtml]="user.description"></p>
+  </div>
+  <div class="clearfix"></div>
   <hr>
   <div class="card-columns">
     <article class="card w-100" *ngFor="let post of posts">
